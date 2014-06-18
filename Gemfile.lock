@@ -146,6 +146,8 @@ DEPENDENCIES
   capybara
   database_cleaner
   factory_girl_rails
+  haml-rails
+  jquery-rails
   pry
   pry-remote
   rspec-rails (~> 2.14.1)
