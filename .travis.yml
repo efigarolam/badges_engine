@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.1.2
 before_script:
-  - "sqlite3 -c 'create database db/test.sqlite3'"
   - 'RAILS_ENV=test bundle exec rake db:migrate'
+  - 'rake dummy:app'
 script:
   - 'RAILS_ENV=test bundle exec rake'
