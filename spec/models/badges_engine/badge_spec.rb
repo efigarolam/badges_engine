@@ -10,4 +10,8 @@ describe BadgesEngine::Badge do
     it { expect(badge).to validate_uniqueness_of(:name) }
     it { expect(badge).to validate_numericality_of(:level).only_integer }
   end
+
+  context 'relationships' do
+    it { expect(badge).to belong_to(:award) }
+  end
 end

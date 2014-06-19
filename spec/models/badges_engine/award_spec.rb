@@ -9,5 +9,9 @@ module BadgesEngine
     context 'validations' do
       it { expect(award).to validate_presence_of(:title) }
     end
+
+    context 'relationships' do
+      it { expect(award).to have_many(:badges) }
+    end
   end
 end
