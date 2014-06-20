@@ -1,0 +1,203 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBadgesEngineBadges (20140617153637)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "badges_engine_badges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "image" varchar(255), "description" text, "level" integer, "award" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140617153637"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.6ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = 'Dummy badge' AND "badges_engine_badges"."id" != 1) LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = 'Dummy badge' AND "badges_engine_badges"."id" != 1) LIMIT 1
+  [1m[36mBadgesEngine::Badge Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = 'Dummy badge' AND "badges_engine_badges"."id" != 1) LIMIT 1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = 'Dummy badge' AND "badges_engine_badges"."id" != 1) LIMIT 1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = 'Dummy badge' AND "badges_engine_badges"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Load (0.2ms)[0m  SELECT "badges_engine_badges".* FROM "badges_engine_badges" ORDER BY "badges_engine_badges"."id" ASC LIMIT 1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.3ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" IS NULL AND "badges_engine_badges"."id" != 1) LIMIT 1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" IS NULL AND "badges_engine_badges"."id" != 1) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBadgesEngine::Badge Load (0.2ms)[0m  [1mSELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered /Users/Velazquez/Projects/Crowdint/badges_engine/app/views/badges_engine/badges/edit.html.haml within layouts/badges_engine/application (0.4ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by BadgesEngine::BadgesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBadgesEngine::Badge Load (0.1ms)[0m  SELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.2ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#index as HTML
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#index as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.2ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBadgesEngine::Badge Load (0.1ms)[0m  [1mSELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/badges
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "badges_engine_badges"[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by BadgesEngine::BadgesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBadgesEngine::Badge Load (0.1ms)[0m  SELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/badges
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by BadgesEngine::BadgesController#create as HTML
+  Parameters: {"badge"=>{"name"=>"Dummy badge", "level"=>"1"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.2ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#create as HTML
+  Parameters: {"badge"=>{"name"=>"test", "level"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'test' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "test"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/badges/2
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+  [1m[36mBadgesEngine::Badge Load (0.1ms)[0m  [1mSELECT "badges_engine_badges".* FROM "badges_engine_badges" ORDER BY "badges_engine_badges"."id" DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by BadgesEngine::BadgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBadgesEngine::Badge Load (0.4ms)[0m  SELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.2ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBadgesEngine::Badge Load (0.1ms)[0m  [1mSELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by BadgesEngine::BadgesController#update as HTML
+  Parameters: {"badge"=>{"name"=>"", "level"=>"1"}, "id"=>"1"}
+  [1m[35mBadgesEngine::Badge Load (0.1ms)[0m  SELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.2ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = '' AND "badges_engine_badges"."id" != 1) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBadgesEngine::Badge Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by BadgesEngine::BadgesController#update as HTML
+  Parameters: {"badge"=>{"name"=>"test", "level"=>"1"}, "id"=>"1"}
+  [1m[35mBadgesEngine::Badge Load (0.1ms)[0m  SELECT "badges_engine_badges".* FROM "badges_engine_badges" WHERE "badges_engine_badges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.1ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE ("badges_engine_badges"."name" = 'test' AND "badges_engine_badges"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "badges_engine_badges" SET "name" = ?, "updated_at" = ? WHERE "badges_engine_badges"."id" = 1[0m  [["name", "test"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/badges/1
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.5ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#new as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBadgesEngine::Badge Exists (0.2ms)[0m  SELECT 1 AS one FROM "badges_engine_badges" WHERE "badges_engine_badges"."name" = 'Dummy badge' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "badges_engine_badges" ("created_at", "level", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00], ["level", 1], ["name", "Dummy badge"], ["updated_at", Thu, 19 Jun 2014 23:00:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by BadgesEngine::BadgesController#new as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
