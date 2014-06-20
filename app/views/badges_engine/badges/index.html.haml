@@ -8,17 +8,7 @@
       %th Level
       %th Award
       %th{ colspan: 3 }
-  %tbody
-    - @badges.each do |badge|
-      %tr
-        %td= badge.name
-        %td= badge.image
-        %td= badge.description
-        %td= badge.level
-        %td= badge.award
-        %td= link_to 'Show', badge
-        %td= link_to 'Edit', edit_badge_path(badge)
-        %td= link_to 'Destroy', badge, method: :delete,
-          data: { confirm: 'Are you sure?' }
+    %tbody
+      = render @badges
 %br
 = link_to 'New Badge', new_badge_path
