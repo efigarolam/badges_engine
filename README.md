@@ -19,6 +19,8 @@ The main table is badges, this table has the following attributes
 * updated_at
 * award_id
 
+This can be accessed in the console as `BadgesEngine::Badge`
+
 The second table is awards, this table has the following attributes
 
 * id
@@ -26,6 +28,8 @@ The second table is awards, this table has the following attributes
 * description
 * created_at
 * updated_at
+
+This can be accessed in the console as `BadgesEngine::Award`
 
 This is the current database structure, this probably will change in a future
 
