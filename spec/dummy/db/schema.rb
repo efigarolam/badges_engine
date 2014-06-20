@@ -11,16 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617153637) do
+ActiveRecord::Schema.define(version: 20140619215254) do
+
+  create_table "badges_engine_awards", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "badges_engine_badges", force: true do |t|
     t.string   "name"
     t.string   "image"
     t.text     "description"
     t.integer  "level"
-    t.string   "award"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "award_id"
   end
+
+  add_index "badges_engine_badges", ["award_id"], name: "index_badges_engine_badges_on_award_id"
 
 end
