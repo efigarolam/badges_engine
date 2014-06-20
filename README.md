@@ -3,7 +3,7 @@
 This engine manages all related with CrowdInt badges.
 
 [![Build
-Status](https://travis-ci.org/zalapeach/badges_engine.svg?branch=master)]((https://travis-ci.org/zalapeach/badges_engine)
+Status](https://travis-ci.org/zalapeach/badges_engine.svg?branch=master)](https://travis-ci.org/zalapeach/badges_engine)
 
 # How to contribute
 
