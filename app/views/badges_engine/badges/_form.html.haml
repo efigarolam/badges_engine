@@ -27,4 +27,8 @@
     = f.label :award_id
     %br
     = f.collection_select :award_id, BadgesEngine::Award.all, :id, :title, prompt: 'Select an Award'
+  .field
+    = f.label :value_id
+    %br
+    = f.collection_select :value_id, BadgesEngine::Value.all, :id, :name, prompt: 'Select an Value'
   .actions= f.submit

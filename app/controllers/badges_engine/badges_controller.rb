@@ -48,11 +48,8 @@ module BadgesEngine
 
     def badge_params
       params.require(:badge).permit(
-        :name,
-        :image,
-        :description,
-        :level,
-        :award_id)
+        :name, :image, :description,
+        :level, :award_id, :value_id)
     end
   end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe BadgesEngine::Badge do
-  let(:badge) { create(:badge) }
+  let(:badge) { build(:badge) }
 
   it { expect(badge).to be_valid }
 
@@ -13,5 +13,6 @@ describe BadgesEngine::Badge do
 
   context 'relationships' do
     it { expect(badge).to belong_to(:award) }
+    it { expect(badge).to belong_to(:value) }
   end
 end
