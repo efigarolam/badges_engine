@@ -3,5 +3,9 @@ module BadgesEngine
     def show_award(award)
       award.title unless award.nil?
     end
+
+    def show_value(value)
+      value.name unless value.nil?
+    end
   end
 end
