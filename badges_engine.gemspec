@@ -5,11 +5,11 @@ require 'badges_engine/version'
 Gem::Specification.new do |s|
   s.name        = 'badges_engine'
   s.version     = BadgesEngine::VERSION
-  s.authors     = ['Juan Carlos Aguilar Rincon']
-  s.email       = ['juan.aguilar@crowdint.com']
-  s.homepage    = 'TODO'
-  s.summary     = 'TODO: Summary of BadgesEngine.'
-  s.description = 'TODO: Description of BadgesEngine.'
+  s.authors     = ['Juan Carlos Aguilar Rincon', 'Victor Velazquez']
+  s.email       = ['juan.aguilar@crowdint.com', 'victor.velazquez@crowdint.com']
+  s.homepage    = 'http://kardex.crowdint.com'
+  s.summary     = 'Badge Engine'
+  s.description = 'Mountable engine related to all about badges for kardex crowdint'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
