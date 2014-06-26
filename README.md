@@ -63,4 +63,8 @@ Easy don't you think?
 
 The repo has tests, please complete the setup before run tests.
 
+# Decent exposure
+
+We are using Decent Exposure gem http://decentexposure.info/ 
+
 This project rocks and uses MIT-LICENSE.

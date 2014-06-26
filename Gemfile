@@ -4,3 +4,4 @@ gemspec
 
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'decent_exposure'
