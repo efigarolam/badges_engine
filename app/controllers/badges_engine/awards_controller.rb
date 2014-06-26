@@ -2,41 +2,29 @@ require_dependency "badges_engine/application_controller"
 
 module BadgesEngine
   class AwardsController < ApplicationController
-    before_action :set_award, only: [:show, :edit, :update, :destroy]
-
-    def index
-      @awards = Award.all
-    end
-
-    def show
-    end
-
-    def new
-      @award = Award.new
-    end
-
-    def edit
-    end
+    before_action :set_award, only: [:show, :destroy]
+    expose(:award)
 
     def create
-      @award = Award.new(award_params)
-      if @award.save
-        redirect_to @award, notice: 'Award was successfully created.'
+      award = Award.new(award_params)
+      if award.save
+        redirect_to award, notice: 'Award was successfully created.'
       else
         render action: 'new'
       end
     end
 
     def update
-      if @award.update(award_params)
-        redirect_to @award, notice: 'Award was successfully updated.'
+      award = Award.find(params[:id])
+      if award.update(award_params)
+        redirect_to award, notice: 'Award was successfully updated.'
       else
         render action: 'edit'
       end
     end
 
     def destroy
-      @award.destroy
+      award.destroy
       redirect_to awards_url, notice: 'Award was successfully destroyed.'
     end
 
