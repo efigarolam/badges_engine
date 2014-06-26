@@ -15,4 +15,11 @@ describe BadgesEngine::Badge do
     it { expect(badge).to belong_to(:award) }
     it { expect(badge).to belong_to(:value) }
   end
+
+  context 'after initialize' do
+    it "generates a 1 level on initialize" do
+      badge = BadgesEngine::Badge.new
+      expect(badge.level).not_to be_nil
+    end
+  end
 end
