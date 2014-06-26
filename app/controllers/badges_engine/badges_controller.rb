@@ -2,12 +2,9 @@ require_dependency "badges_engine/application_controller"
 
 module BadgesEngine
   class BadgesController < ApplicationController
-    before_action :set_badge, only: [:show, :edit, :destroy]
-
-    expose(:badge)
+    expose(:badge, attributes: :badge_params)
 
     def create
-      badge = Badge.new(badge_params)
       if badge.save
         redirect_to badge, notice: 'Badge was successfully created.'
       else
@@ -16,8 +13,7 @@ module BadgesEngine
     end
 
     def update
-      badge = Badge.find(params[:id])
-      if badge.update(badge_params)
+      if badge.save
         redirect_to badge, notice: 'Badge was successfully updated.'
       else
         render :edit
@@ -25,15 +21,11 @@ module BadgesEngine
     end
 
     def destroy
-      @badge.destroy
+      badge.destroy
       redirect_to badges_url, notice: 'Badge was successfully destroyed.'
     end
 
     private
-
-    def set_badge
-      @badge = Badge.find(params[:id])
-    end
 
     def badge_params
       params.require(:badge).permit(
