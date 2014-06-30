@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Tier:
+  = @level.tier
+%p
+  %strong Description:
+  = @level.badge_alias
+= link_to 'Edit', edit_level_path(@level)
+|
+= link_to 'Back', levels_path
