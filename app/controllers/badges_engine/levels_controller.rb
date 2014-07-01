@@ -2,33 +2,52 @@ require_dependency "badges_engine/application_controller"
 
 module BadgesEngine
   class LevelsController < ApplicationController
-    expose(:level, attributes: :level_params)
+    before_action :set_level, only: [:show, :edit, :update, :destroy]
+
+    def index
+      @levels = Level.all
+    end
+
+    def show
+    end
+
+    def new
+      @level = Level.new
+    end
+
+    def edit
+    end
 
     def create
-      if level.save
-        redirect_to level, notice: 'level was successfully created.'
+      @level = Level.new(level_params)
+      if @level.save
+        redirect_to @level, notice: 'level was successfully created.'
       else
-        render :new
+        render 'new'
       end
     end
 
     def update
-      if level.save
-        redirect_to level, notice: 'level was successfully updated.'
+      if @level.update(level_params)
+        redirect_to @level, notice: 'level was successfully updated.'
       else
-        render :edit
+        render 'edit'
       end
     end
 
     def destroy
-      level.destroy
+      @level.destroy
       redirect_to levels_url, notice: 'level was successfully destroyed.'
     end
 
     private
 
+    def set_level
+      @level = Level.find(params[:id])
+    end
+
     def level_params
-      params.require(:level).permit(:tier, :badge_alias)
+      params.require(:level).permit(:title, :description)
     end
   end
 end

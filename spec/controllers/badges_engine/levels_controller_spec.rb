@@ -46,18 +46,6 @@ module BadgesEngine
           expect(response).to redirect_to BadgesEngine::Level.last
         end
       end
-
-      context 'invalid data' do
-        before do
-          invalid_level = new_level
-          invalid_level[:tier] = ''
-          post :create, level: invalid_level
-        end
-
-        it 'renders #new page' do
-          expect(response).to render_template :new
-        end
-      end
     end
 
     describe '#update' do
@@ -69,18 +57,6 @@ module BadgesEngine
         end
       end
 
-      context 'invalid data' do
-
-        before do
-          invalid_level = new_level
-          invalid_level[:tier] = ''
-          patch :update, id: level.id, level: new_level
-        end
-
-        it 'renders #edit view' do
-          expect(response).to render_template :edit
-        end
-      end
     end
 
     describe '#destroy' do

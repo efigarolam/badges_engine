@@ -2,30 +2,49 @@ require_dependency "badges_engine/application_controller"
 
 module BadgesEngine
   class ValuesController < ApplicationController
-    expose(:value, attributes: :value_params)
+    before_action :set_value, only: [:show, :edit, :update, :destroy]
+
+    def index
+      @values = Value.all
+    end
+
+    def show
+    end
+
+    def new
+      @value = Value.new
+    end
+
+    def edit
+    end
 
     def create
-      if value.save
-        redirect_to value, notice: 'Value was successfully created.'
+      @value = Value.new(value_params)
+      if @value.save
+        redirect_to @value, notice: 'Value was successfully created.'
       else
-        render :new
+        render action: :new
       end
     end
 
     def update
-      if value.save
-        redirect_to value, notice: 'Value was successfully updated.'
+      if @value.update(value_params)
+        redirect_to @value, notice: 'Value was successfully updated.'
       else
-        render :edit
+        render action: :edit
       end
     end
 
     def destroy
-      value.destroy
+      @value.destroy
       redirect_to values_url, notice: 'Value was successfully destroyed.'
     end
 
     private
+
+    def set_value
+      @value = Value.find(params[:id])
+    end
 
     def value_params
       params.require(:value).permit(:name, :description)

@@ -1,9 +1,9 @@
-= form_for(level) do |f|
-  - if level.errors.any?
+= form_for(@level) do |f|
+  - if @level.errors.any?
     #error_explanation
       %h2
-        = pluralize(level.errors.count, "error")
-        prohibited this level from being saved:
+        = pluralize(@level.errors.count, "error")
+        prohibited this @level from being saved:
       %ul
         - award.errors.full_messages.each do |msg|
           %li= msg
