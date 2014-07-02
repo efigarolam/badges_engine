@@ -7,12 +7,11 @@ module BadgesEngine
     it { expect(level).to be_valid }
 
     context 'validations' do
-      it { expect(level).to validate_presence_of(:tier) }
       it { expect(level).to validate_numericality_of(:tier).only_integer }
     end
 
     context 'relationships' do
-      it { expect(level).to have_many(:badges) }
+      it { expect(level).to belong_to(:badge) }
     end
 
     context 'after initialize' do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630162731) do
+ActiveRecord::Schema.define(version: 20140702070844) do
 
   create_table "badges_engine_awards", force: true do |t|
     t.string   "title"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20140630162731) do
   end
 
   add_index "badges_engine_badges", ["award_id"], name: "index_badges_engine_badges_on_award_id"
-  add_index "badges_engine_badges", ["level_id"], name: "index_badges_engine_badges_on_level_id"
   add_index "badges_engine_badges", ["value_id"], name: "index_badges_engine_badges_on_value_id"
 
   create_table "badges_engine_levels", force: true do |t|
@@ -40,7 +39,10 @@ ActiveRecord::Schema.define(version: 20140630162731) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "badge_alias"
+    t.integer  "badge_id"
   end
+
+  add_index "badges_engine_levels", ["badge_id"], name: "index_badges_engine_levels_on_badge_id"
 
   create_table "badges_engine_values", force: true do |t|
     t.string   "name"

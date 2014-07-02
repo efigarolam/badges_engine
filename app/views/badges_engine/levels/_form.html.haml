@@ -5,8 +5,12 @@
         = pluralize(@level.errors.count, "error")
         prohibited this @level from being saved:
       %ul
-        - award.errors.full_messages.each do |msg|
+        - @level.errors.full_messages.each do |msg|
           %li= msg
+  .field
+    = f.label :badge_id
+    %br
+    = f.collection_select :badge_id, BadgesEngine::Badge.all, :id, :name, prompt: 'Select a Badge'
   .field
     = f.label :tier
     %br
