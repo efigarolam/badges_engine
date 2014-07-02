@@ -23,7 +23,7 @@ module BadgesEngine
       if @award.save
         redirect_to @award, notice: 'Award was successfully created.'
       else
-        render action: 'new'
+        render 'new'
       end
     end
 
@@ -31,7 +31,7 @@ module BadgesEngine
       if @award.update(award_params)
         redirect_to @award, notice: 'Award was successfully updated.'
       else
-        render action: 'edit'
+        render 'edit'
       end
     end
 

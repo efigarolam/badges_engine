@@ -23,7 +23,7 @@ module BadgesEngine
       if @value.save
         redirect_to @value, notice: 'Value was successfully created.'
       else
-        render action: :new
+        render :new
       end
     end
 
@@ -31,7 +31,7 @@ module BadgesEngine
       if @value.update(value_params)
         redirect_to @value, notice: 'Value was successfully updated.'
       else
-        render action: :edit
+        render :edit
       end
     end
 
