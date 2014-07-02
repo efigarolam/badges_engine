@@ -13,6 +13,6 @@ describe BadgesEngine::Badge do
   context 'relationships' do
     it { expect(badge).to belong_to(:award) }
     it { expect(badge).to belong_to(:value) }
-    it { expect(badge).to belong_to(:level) }
+    it { expect(badge).to have_many(:levels) }
   end
 end

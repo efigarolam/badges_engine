@@ -2,7 +2,7 @@ module BadgesEngine
   class Badge < ActiveRecord::Base
     belongs_to :award
     belongs_to :value
-    belongs_to :level
+    has_many :levels
 
 
     validates :name, presence: true, uniqueness: true
