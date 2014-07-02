@@ -7,5 +7,9 @@ module BadgesEngine
     def show_value(value)
       value.name unless value.nil?
     end
+
+    def show_badge(badge)
+      badge.name unless badge.nil?
+    end
   end
 end
