@@ -8,8 +8,8 @@ module BadgesEngine
       value.name unless value.nil?
     end
 
-    def show_level(level)
-      level.tier unless level.nil?
+    def show_badge(badge)
+      badge.name unless badge.nil?
     end
   end
 end
