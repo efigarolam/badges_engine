@@ -59,6 +59,9 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (1.22.1)
       fog-brightbox
       fog-core (~> 1.22)
@@ -179,6 +182,7 @@ DEPENDENCIES
   carrierwave
   database_cleaner
   factory_girl_rails
+  figaro
   fog
   haml-rails
   jquery-rails
