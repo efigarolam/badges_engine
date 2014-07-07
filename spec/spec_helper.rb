@@ -6,6 +6,7 @@ require 'factory_girl_rails'
 require 'shoulda-matchers'
 require 'haml-rails'
 require 'pry'
+require 'carrierwave'
 
 ENGINE_RAILS_ROOT = File.join(File.dirname(__FILE__), '../')
 Dir[File.join(ENGINE_RAILS_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
@@ -22,4 +23,6 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   config.order = "random"
+
+  config.include CarrierWave::Test::Matchers
 end

@@ -14,3 +14,4 @@ spec/dummy/config/secrets.yml
 spec/dummy/tmp/
 spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
+spec/dummy/config/application.yml

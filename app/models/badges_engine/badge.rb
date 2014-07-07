@@ -4,7 +4,8 @@ module BadgesEngine
     belongs_to :value
     has_many :levels
 
-
     validates :name, presence: true, uniqueness: true
+
+    mount_uploader :image, ImageUploader
   end
 end
