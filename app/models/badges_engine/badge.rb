@@ -6,6 +6,8 @@ module BadgesEngine
 
     validates :name, presence: true, uniqueness: true
 
+    accepts_nested_attributes_for :levels
+
     mount_uploader :image, ImageUploader
   end
 end
