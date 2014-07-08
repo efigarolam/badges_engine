@@ -13,6 +13,7 @@ module BadgesEngine
 
     def new
       @badge = Badge.new
+      @levels = @badge.levels.build
     end
 
     def edit
@@ -49,7 +50,11 @@ module BadgesEngine
     def badge_params
       params.require(:badge).permit(
         :name, :image, :description,
-        :award_id, :value_id)
+        :award_id, :value_id,
+        levels_attributes: [
+          :tier, :badges_alias, :badge_id
+        ]
+      )
     end
   end
 end
