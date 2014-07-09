@@ -25,4 +25,5 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include CarrierWave::Test::Matchers
+
 end
