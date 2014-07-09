@@ -5,7 +5,11 @@ module BadgesEngine
     before_action :set_badge, only: [:show, :edit, :update, :destroy]
 
     def index
-      @badges = Badge.all
+      @badges = if params[:search]
+                Badge.where("name ILIKE ?", "%#{params[:search]}%")
+             else
+                Badge.all
+       end
     end
 
     def show
