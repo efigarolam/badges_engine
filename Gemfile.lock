@@ -8,6 +8,7 @@ PATH
       jquery-rails
       mini_magick
       rails (~> 4.0.4)
+      simple_form
 
 GEM
   remote: https://rubygems.org/
@@ -151,6 +152,9 @@ GEM
       rspec-mocks (~> 2.14.0)
     shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
+    simple_form (3.0.2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     slop (3.5.0)
     sprockets (2.12.1)
       hike (~> 1.2)
@@ -191,4 +195,5 @@ DEPENDENCIES
   pry-remote
   rspec-rails (~> 2.14.1)
   shoulda-matchers
+  simple_form
   sqlite3

@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave'
   s.add_dependency 'fog'
   s.add_dependency 'mini_magick'
+  s.add_dependency 'simple_form'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'pry'
@@ -31,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_girl_rails'
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'simple_form'
 end
