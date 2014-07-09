@@ -1,30 +1,23 @@
-= form_for @badge , html: { multipart: true } do |f|
-  - if @badge.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@badge.errors.count, "error")
-        prohibited this @badge from being saved:
-      %ul
-        - @badge.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :name
-    %br
-    = f.text_field :name
-  .field
-    = f.label :image
-    %br
-    = f.file_field :image
-  .field
-    = f.label :description
-    %br
-    = f.text_area :description
-  .field
-    = f.label :award_id
-    %br
-    = f.collection_select :award_id, BadgesEngine::Award.all, :id, :title, prompt: 'Select an Award'
-  .field
-    = f.label :value_id
-    %br
-    = f.collection_select :value_id, BadgesEngine::Value.all, :id, :name, prompt: 'Select an Value'
-  .actions= f.submit
+=simple_form_for(@badge, html:{multipart: true}) do |f|
+  = render partial: 'shared/errors', locals: { resource: @badge }
+  .col-sm-3
+    = image_tag ''
+    %p Browse Images
+    .field
+      = f.input :image
+  .col-sm-9
+    .field
+      = f.input :name
+    .field
+      = f.input :description
+    .field
+      = f.input :award_id, collection: BadgesEngine::Award.all, value_method: :id, label_method: :title, prompt: 'Select an Award'
+    .field
+      = f.input :value_id, collection: BadgesEngine::Value.all, value_method: :id, label_method: :name, prompt: 'Select a Value'
+    #levels
+      = f.simple_fields_for :levels do |level|
+        = render 'level_fields', f: level
+      .links
+        = link_to_add_association 'add level', f, :levels
+    .actions
+      = f.submit 'Save', class: 'btn'

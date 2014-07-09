@@ -51,8 +51,8 @@ module BadgesEngine
       params.require(:badge).permit(
         :name, :image, :description,
         :award_id, :value_id,
-        levels_attributes: [
-          :tier, :badges_alias, :badge_id
+        levels_attributes: [ :id,
+          :tier, :badge_alias, :badge_id, :_destroy
         ]
       )
     end
