@@ -4,8 +4,12 @@ module BadgesEngine
 
     storage :fog
 
+    def default_url
+      ActionController::Base.helpers.asset_path('no-image.svg')
+    end
+
     def extension_white_list
-      %w(jpg svg jpeg gif png)
+      %w(svg png)
     end
   end
 end
