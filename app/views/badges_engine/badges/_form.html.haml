@@ -2,7 +2,7 @@
   = render partial: 'shared/errors', locals: { resource: @badge }
   .col-md-4
     .span4
-      = image_tag 'no-image.svg'
+      = image_tag @badge.image_url
       %section
         %h5 Browse Images
         .field

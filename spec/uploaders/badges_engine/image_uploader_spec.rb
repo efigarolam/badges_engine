@@ -16,7 +16,8 @@ module BadgesEngine
       uploader.remove!
     end
 
-    it { expect(uploader.extension_white_list).to eq %w(jpg svg jpeg gif png) }
+    it { expect(uploader.extension_white_list).to eq %w(svg png) }
     it { expect(uploader.mounted_as).to eq :image }
+    it { expect(uploader.default_url).to eq '/no-image.svg' }
   end
 end
