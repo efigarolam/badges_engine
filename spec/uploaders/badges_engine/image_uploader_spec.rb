@@ -18,6 +18,6 @@ module BadgesEngine
 
     it { expect(uploader.extension_white_list).to eq %w(svg png) }
     it { expect(uploader.mounted_as).to eq :image }
-    it { expect(uploader.default_url).to eq '/no-image.svg' }
+    it { expect(uploader.default_url).to eq '/assets/no-image.svg' }
   end
 end
