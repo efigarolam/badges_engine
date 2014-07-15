@@ -3,6 +3,7 @@ require_dependency "badges_engine/application_controller"
 module BadgesEngine
   class BadgesController < ApplicationController
     before_action :set_badge, only: [:show, :edit, :update, :destroy]
+    helper_method :sort_column, :sort_direction
 
     def index
       @badges = if params[:search]
