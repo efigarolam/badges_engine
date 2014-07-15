@@ -7,8 +7,9 @@ module BadgesEngine
     def index
       @badges = if params[:search]
                 Badge.where("name ILIKE ?", "%#{params[:search]}%")
+                     .order(sort_column + " " + sort_direction)
              else
-                Badge.all
+                Badge.order(sort_column + " " + sort_direction)
        end
     end
 
@@ -59,6 +60,14 @@ module BadgesEngine
           :tier, :badge_alias, :badge_id, :_destroy
         ]
       )
+    end
+
+    def sort_column
+      Badge.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
   end
 end
