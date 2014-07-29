@@ -41,8 +41,8 @@ describe BadgesEngine::BadgesController do
     context 'valid data' do
       before { post :create, badge: new_badge }
 
-      it 'redirects to #show page' do
-        expect(response).to redirect_to BadgesEngine::Badge.last
+      it 'redirects to #index page' do
+        expect(response).to redirect_to badges_path
       end
     end
 
@@ -64,7 +64,7 @@ describe BadgesEngine::BadgesController do
       before { patch :update, id: badge.id, badge: new_badge }
 
       it 'redirects to #show page' do
-        expect(response).to redirect_to badge_path(badge)
+        expect(response).to redirect_to badges_path
       end
     end
 
