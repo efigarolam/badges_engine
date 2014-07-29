@@ -28,7 +28,7 @@ module BadgesEngine
     def create
       @badge = Badge.new(badge_params)
       if @badge.save
-        redirect_to @badge, notice: 'Badge was successfully created.'
+        redirect_to badges_url, notice: 'Badge was successfully created.'
       else
         render :new
       end
@@ -36,7 +36,7 @@ module BadgesEngine
 
     def update
       if @badge.update(badge_params)
-        redirect_to @badge, notice: 'Badge was successfully updated.'
+        redirect_to badges_url, notice: 'Badge was successfully updated.'
       else
         render :edit
       end
